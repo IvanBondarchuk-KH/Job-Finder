@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ site_title|default:"Job Search" }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'jobs/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo-block">
+                <span class="logo-icon">🔍</span>
+                <span class="logo-text"><span class="logo-bold">Job</span><span class="logo-accent">Scout</span></span>
+                <span class="logo-slogan">Find the job. Build the future.</span>
+            </div>
+            <nav class="main-nav">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">Jobs</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="nav-link">For Employers</a>
+                <a href="#" class="nav-link">Contact</a>
+                <a href="#" class="nav-btn">Log In</a>
+                <a href="#" class="nav-btn nav-btn-accent">Sign Up</a>
+            </nav>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>

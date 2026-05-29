@@ -1,0 +1,66 @@
+{% extends 'jobs/base.html' %}
+{% block content %}
+<div class="main-flex">
+    <section class="main-info">
+        <h2 class="big-title">
+            Find Your Dream Job, <span class="gradient-text">Anywhere.</span>
+        </h2>
+        <p class="subtitle">
+            JobScout helps you discover the best remote jobs in tech.<br>
+            Search by city, salary, or role and find opportunities that match your skills and goals.
+        </p>
+        <div class="main-btns">
+            <a href="#jobs-list" class="btn big-btn">Find Jobs</a>
+            <a href="#" class="btn secondary-btn">Learn More</a>
+        </div>
+        <div class="features">
+            <div class="feature">
+                <span class="icon">🌐</span>
+                <div>
+                    <div class="feature-title">Remote Jobs</div>
+                    <div class="feature-desc">100% remote opportunities</div>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="icon">🏙️</span>
+                <div>
+                    <div class="feature-title">Search by City</div>
+                    <div class="feature-desc">Find jobs in your favorite city</div>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="icon">💸</span>
+                <div>
+                    <div class="feature-title">Salary Filter</div>
+                    <div class="feature-desc">Find jobs by your desired salary</div>
+                </div>
+            </div>
+            <div class="feature">
+                <span class="icon">📊</span>
+                <div>
+                    <div class="feature-title">Smart Insights</div>
+                    <div class="feature-desc">Get average, min and max salary</div>
+                </div>
+            </div>
+        </div>
+        <div class="code-banner">
+            <span class="gradient-text">&lt;/&gt; Code Your Career. Live Your Freedom.</span>
+        </div>
+    </section>
+    <section class="jobs-board" id="jobs-list">
+        <div class="jobs-board-header">
+            <span class="board-title">Featured Jobs</span>
+        </div>
+        <div class="vacancies-list">
+            {% for vacancy in vacancies %}
+            <div class="vacancy-card">
+                <h2>{{ vacancy.title }}</h2>
+                <p class="company">{{ vacancy.company }}</p>
+                <p class="salary">{{ vacancy.salary }}</p>
+                <a href="{% url 'vacancy_detail' vacancy.id %}" class="btn">Details</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}
