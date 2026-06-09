@@ -1,0 +1,27 @@
+{% extends 'jobs/base.html' %}
+
+{% block content %}
+<div class="jobs-page-container" style="padding: 20px 5vw;">
+    <h2 class="big-title">All <span class="gradient-text">Vacancies</span></h2>
+
+    <form method="get" action="{% url 'vacancies' %}" style="margin-bottom: 30px; display: flex; gap: 10px;">
+        <input type="text" name="q" placeholder="Search vacancies by title..." value="{{ query|default:'' }}" 
+               style="padding: 12px; border-radius: 8px; border: 1.5px solid #353b5c; background: #232946; color: #fff; flex: 1;">
+        <button type="submit" class="btn">Search</button>
+    </form>
+
+    <div class="vacancies-list">
+        {% for vacancy in vacancies %}
+        <div class="vacancy-card">
+            <h2>{{ vacancy.title }}</h2>
+            <p class="company">🏢 {{ vacancy.company }}</p>
+            <p class="location">📍 {{ vacancy.location }}</p>
+            <p class="salary">💰 {{ vacancy.salary }}</p>
+            <a href="{% url 'vacancy_detail' vacancy.id %}" class="btn">Details</a>
+        </div>
+        {% empty %}
+        <p>No vacancies found matching your search.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

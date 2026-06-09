@@ -1,0 +1,17 @@
+{% extends 'jobs/base.html' %}
+{% block content %}
+<div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+    <h2 class="big-title">{{ article.title }}</h2>
+    <p style="color: #7f9cf5;">Author: {{ article.author }} | Date: {{ article.created_at|date:"M d, Y" }}</p>
+    
+    {% if article.image %}
+        <img src="{{ article.image.url }}" alt="{{ article.title }}" style="max-width: 100%; border-radius: 12px; margin-bottom: 20px;">
+    {% endif %}
+
+    <div style="line-height: 1.6; color: #e0e0e0; font-size: 1.1rem; white-space: pre-wrap;">
+        {{ article.content }}
+    </div>
+    <br>
+    <a href="{% url 'articles' %}" class="btn back-btn">Back to Articles</a>
+</div>
+{% endblock %}

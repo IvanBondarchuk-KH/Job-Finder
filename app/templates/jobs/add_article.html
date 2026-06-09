@@ -1,0 +1,39 @@
+{% extends 'jobs/base.html' %}
+
+{% block content %}
+<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+    <h2 class="big-title">Add New <span class="gradient-text">Article</span></h2>
+    
+    <form method="post" style="display: flex; flex-direction: column; gap: 15px; background: #232946; padding: 30px; border-radius: 18px; border: 1.5px solid #353b5c;">
+        {% csrf_token %}
+        
+        {% for field in form %}
+            <div style="display: flex; flex-direction: column; gap: 5px;">
+                <label style="color: #7f9cf5; font-weight: 600;">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <span style="color: #ff4a4a; font-size: 0.9rem;">{{ field.errors }}</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+        
+        <button type="submit" class="btn" style="margin-top: 15px; align-self: flex-start;">Save Article</button>
+    </form>
+</div>
+
+<style>
+    form input[type="text"], form textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1.5px solid #353b5c;
+        background: #181a2a;
+        color: #fff;
+        box-sizing: border-box;
+    }
+    form textarea {
+        height: 120px;
+        resize: vertical;
+    }
+</style>
+{% endblock %}

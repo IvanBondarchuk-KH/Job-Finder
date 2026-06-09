@@ -1,0 +1,19 @@
+{% extends 'jobs/base.html' %}
+{% block content %}
+<div style="padding: 20px 5vw;">
+    <h2 class="big-title">Career <span class="gradient-text">Articles</span></h2>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+        {% for article in articles %}
+        <div style="background: #232946; padding: 20px; border-radius: 12px; border: 1.5px solid #353b5c;">
+            <h3>{{ article.title }}</h3>
+            <p style="color: #b3b3e6;">{{ article.short_description }}</p>
+            <small style="color: #7f9cf5;">Posted on: {{ article.created_at|date:"M d, Y" }}</small>
+            <br><br>
+            <a href="{% url 'article_detail' article.id %}" class="btn" style="padding: 5px 15px; font-size: 0.9rem;">Read More</a>
+        </div>
+        {% empty %}
+        <p>No articles available yet.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

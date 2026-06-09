@@ -15,13 +15,14 @@
                 <span class="logo-slogan">Find the job. Build the future.</span>
             </div>
             <nav class="main-nav">
-                <a href="#" class="nav-link active">Home</a>
-                <a href="#" class="nav-link">Jobs</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="nav-link">For Employers</a>
-                <a href="#" class="nav-link">Contact</a>
-                <a href="#" class="nav-btn">Log In</a>
-                <a href="#" class="nav-btn nav-btn-accent">Sign Up</a>
+                <a href="{% url 'home' %}" class="nav-link">Home</a>
+                <a href="{% url 'vacancies' %}" class="nav-link">Jobs</a>
+                <a href="{% url 'articles' %}" class="nav-link">Articles</a>
+                <a href="{% url 'add_article' %}" class="nav-link">Add Article</a>
+                <a href="{% url 'about' %}" class="nav-link">About</a>
+                
+                <a href="{% url 'admin:index' %}" class="nav-btn">Log In</a>
+                <a href="{% url 'admin:index' %}" class="nav-btn nav-btn-accent">Sign Up</a>
             </nav>
         </header>
         <main>
