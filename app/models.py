@@ -20,24 +20,24 @@ class Vacancy(models.Model):
 class Article(models.Model):
     title = models.CharField(
         max_length=200,
-        verbose_name="Title"  # Було "Заголовок"
+        verbose_name="Title"
     )
     author = models.CharField(
         max_length=100, 
-        default="Editorial",  # Було "Редакція"
-        verbose_name="Author"  # Було "Автор"
+        default="Editorial",
+        verbose_name="Author"
     )
     short_description = models.TextField(
-        verbose_name="Short Description"  # Було "Короткий опис"
+        verbose_name="Short Description"
     )
     content = models.TextField(
-        verbose_name="Article Content"  # Було "Текст статті"
+        verbose_name="Article Content"
     )
     image = models.ImageField(
         upload_to="articles/", 
         blank=True, 
         null=True, 
-        verbose_name="Image"  # Було "Зображення"
+        verbose_name="Image"
     )
     created_at = models.DateTimeField(
         auto_now_add=True

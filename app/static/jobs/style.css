@@ -475,3 +475,97 @@ body {
     background: linear-gradient(90deg, #9921e8 0%, #5f72ff 100%);
     color: #fff;
 }
+
+.jooble-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+}
+
+.jooble-card h3 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.jooble-card p {
+    color: #d7d7d7;
+    margin: 8px 0;
+}
+
+.jooble-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    background: linear-gradient(90deg,#4f7cff,#8a2be2);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.jooble-btn:hover {
+    transform: translateY(-2px);
+}
+
+.search-box {
+    margin: 25px 0;
+}
+
+.search-box input {
+    width: 300px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+}
+
+.search-box button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #4f7cff;
+    color: white;
+    cursor: pointer;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.jooble-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.jooble-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.jooble-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.jooble-card {
+    max-width: 1000px;
+    margin: 20px auto;
+}

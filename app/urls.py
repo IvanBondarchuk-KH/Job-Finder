@@ -9,4 +9,5 @@ urlpatterns = [
     path('articles/<int:id>/', views.article_detail, name='article_detail'),
     path('add-article/', views.add_article, name='add_article'),
     path('about/', views.about, name='about'),
+    path('jooble/', views.jooble_vacancies, name='jooble'),
 ]

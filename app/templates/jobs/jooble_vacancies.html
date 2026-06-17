@@ -1,0 +1,47 @@
+{% extends 'jobs/base.html' %}
+
+{% block content %}
+
+<div class="jooble-container">
+
+    <h1 class="jooble-title">
+        Jooble Vacancies
+    </h1>
+
+    <form method="get" class="search-box">
+        <input type="text"
+               name="q"
+               value="{{ query }}"
+               placeholder="Python Developer">
+
+        <button type="submit">
+            Search
+        </button>
+    </form>
+
+    {% for vacancy in vacancies %}
+    <div class="jooble-card">
+    
+        <h3>{{ vacancy.title }}</h3>
+    
+        <p><strong>Company:</strong> {{ vacancy.company }}</p>
+    
+        <p><strong>Location:</strong> {{ vacancy.location }}</p>
+    
+        <p><strong>Salary:</strong> {{ vacancy.salary }}</p>
+    
+        <a class="jooble-btn"
+           href="{{ vacancy.link }}"
+           target="_blank">
+           View on Jooble
+        </a>
+    
+    </div>
+    {% endfor %}
+    
+</div>
+
+{% for vacancy in vacancies %}
+{% endfor %}
+
+{% endblock %}
